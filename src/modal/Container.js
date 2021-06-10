@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
-import { Modal } from '../Modal';
-import TriggerButton from '../TriggerButton';
+import React, { Component } from "react";
+import Modal from "./Modal";
+import "./Container.css";
+
 export class Container extends Component {
   state = { isShown: false };
   showModal = () => {
@@ -11,7 +12,7 @@ export class Container extends Component {
   };
   closeModal = () => {
     this.setState({ isShown: false });
-    this.TriggerButton.focus();
+    // this.TriggerButton.focus()
     this.toggleScrollLock();
   };
   onKeyDown = (event) => {
@@ -25,19 +26,22 @@ export class Container extends Component {
   };
 
   toggleScrollLock = () => {
-    document.querySelector('html').classList.toggle('scroll-lock');
+    document.querySelector("html").classList.toggle("scroll-lock");
   };
+
   render() {
     return (
       <React.Fragment>
-        <TriggerButton
-          showModal={this.showModal}
-          buttonRef={(n) => (this.TriggerButton = n)}
-          triggerText={this.props.triggerText}
-        />
+        <button
+          className="btn btn-lg btn-danger center modal-button"
+          ref={this.buttonRef}
+          onClick={this.showModal}
+        >
+          SHARE PROJECT FORM
+        </button>
+
         {this.state.isShown ? (
           <Modal
-            onSubmit={this.props.onSubmit}
             modalRef={(n) => (this.modal = n)}
             buttonRef={(n) => (this.closeButton = n)}
             closeModal={this.closeModal}

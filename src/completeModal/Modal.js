@@ -1,7 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Form } from '../Form';
-import FocusTrap from 'focus-trap-react';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Form from './Form'
+import FocusTrap from 'focus-trap-react'
+
 export const Modal = ({
   onClickOutside,
   onKeyDown,
@@ -10,7 +11,7 @@ export const Modal = ({
   closeModal,
   onSubmit
 }) => {
-  return ReactDOM.createPortal(
+  return ReactDOM.createPortal( 
     <FocusTrap>
       <aside
         tag="aside"
@@ -43,7 +44,7 @@ export const Modal = ({
       </aside>
     </FocusTrap>,
     document.body
-  );
-};
+  )
+}
 
-export default Modal;
+export default Modal

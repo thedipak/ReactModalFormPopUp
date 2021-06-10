@@ -1,2 +1,9 @@
 # ReactModalFormPopUp
-Created with CodeSandbox
+
+Package installed: focus-trap-react
+Project structure
+    >App
+        >Container
+            >Trigger
+            >Modal
+                >Form
